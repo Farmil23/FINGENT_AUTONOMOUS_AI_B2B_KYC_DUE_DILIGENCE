@@ -1,3 +1,13 @@
+---
+title: FinAgent B2B KYC Due Diligence
+emoji: 🕵️
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+pinned: true
+app_port: 7860
+---
+
 <div align="center">
 
 <img src="app/static/img/logo.png" alt="FinAgent Logo" height="80"/>

@@ -12,7 +12,7 @@ COPY . .
 # Create uploads directory
 RUN mkdir -p uploads
 
-EXPOSE 8000
+EXPOSE 7860
 
-# Use uvicorn with single worker (Railway free tier = 512MB RAM)
-CMD ["uvicorn", "app.api.v1.endpoints:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1"]
+# PORT env var injected by HuggingFace Spaces (7860) or Railway/Render (8000)
+CMD ["sh", "-c", "uvicorn app.api.v1.endpoints:app --host 0.0.0.0 --port ${PORT:-7860} --workers 1"]
